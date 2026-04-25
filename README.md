@@ -1,5 +1,5 @@
 # Real-Time GitHub Event Monitoring System
-
+**Course:** Introduction to Big Data | **Student ID:** 20221216
 
 ## Project Overview
 In this project, we designed and implemented a distributed, real-time event monitoring system. The system ingests streaming data from the GitHub Archive, processes various types of developer activities (e.g., PushEvent, WatchEvent, CreateEvent) in real-time, and visualizes the metrics on a professional dashboard.
