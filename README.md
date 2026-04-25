@@ -32,3 +32,32 @@ We utilized a modern, industry-standard Big Data pipeline:
 Start the Kafka broker, InfluxDB, and Grafana using Docker Compose:
 ```bash
 docker-compose up -d
+```
+### 2. Install Dependencies
+Install the required Python libraries for Kafka and InfluxDB:
+
+```Bash
+pip install confluent-kafka influxdb-client
+```
+### 3. Run the Data Pipeline
+Note: It is recommended to run these in two separate terminal windows.
+
+Terminal 1 (Start the Consumer): Begin listening to the Kafka topic and pushing aggregated metrics to InfluxDB.
+
+```Bash
+python consumer.py
+```
+Terminal 2 (Start the Producer): Start reading the .json.gz file and pumping data into the Kafka pipeline.
+
+```Bash
+python producer.py
+```
+### 4. View the Dashboard
+Open your browser and navigate to http://localhost:3000.
+
+Login with Grafana credentials (default is usually admin / admin).
+
+No manual configuration needed! Thanks to Grafana Provisioning, the InfluxDB data source and the "GitHub Analytics Ultimate" dashboard are pre-configured. Simply open the dashboard from the menu to view real-time metrics.
+
+### 📝 License
+This project was developed for academic purposes as part of the Introduction to Big Data coursework.
